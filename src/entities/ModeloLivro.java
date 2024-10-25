@@ -1,15 +1,15 @@
 package entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-public abstract class ModeloLivro {
+public abstract class ModeloLivro implements Comparable<ModeloLivro> {
     private Integer id;
     private String titulo;
     private String autor;
     private String descricao;
-    private Date publicacao;
+    private LocalDate publicacao;
 
-    public ModeloLivro(Integer id, String titulo, String autor, String descricao, Date publicacao) {
+    public ModeloLivro(Integer id, String titulo, String autor, String descricao, LocalDate publicacao) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -49,11 +49,21 @@ public abstract class ModeloLivro {
         this.descricao = descricao;
     }
 
-    public Date getPublicacao() {
+    public LocalDate getPublicacao() {
         return publicacao;
     }
 
-    public void setPublicacao(Date publicacao) {
+    public void setPublicacao(LocalDate publicacao) {
         this.publicacao = publicacao;
+    }
+
+    @Override
+    public int compareTo(ModeloLivro o1) {
+        if (this.id < o1.getId()) {
+            return -1;
+        } else if (this.id > o1.getId()) {
+            return 1;
+        }
+            return 0;
     }
 }

@@ -3,7 +3,7 @@ package entities;
 import entities.enums.TipoCapa;
 import java.util.Date;
 
-public class LivroFisico extends ModeloLivro{
+public class LivroFisico extends ModeloLivro {
     private Integer numPaginas;
     private TipoCapa tipoCapa;
 

@@ -3,7 +3,7 @@ package entities;
 import entities.enums.Formato;
 import java.util.Date;
 
-public class Ebook extends ModeloLivro{
+public class Ebook extends ModeloLivro {
     private Integer tamanhoMB;
     private Formato formato;
 
